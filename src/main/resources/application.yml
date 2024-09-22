@@ -1,0 +1,25 @@
+# server配置
+server:
+  port: 8080
+
+# spring配置
+spring:
+  application:
+    # 应用的名称，可选
+    name: reggie_takeaway
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8mb4
+      username: root
+      password: 20010101
+
+# mybatis plus配置
+mybatis-plus:
+  configuration:
+    # 在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
