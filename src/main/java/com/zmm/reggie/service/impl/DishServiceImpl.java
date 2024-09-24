@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  * 菜品管理 服务实现类
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
 @Service
 public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements IDishService {

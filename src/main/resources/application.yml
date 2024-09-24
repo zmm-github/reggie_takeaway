@@ -8,18 +8,22 @@ spring:
     # 应用的名称，可选
     name: reggie_takeaway
   datasource:
-    druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true
-      username: root
-      password: 20010101
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: 20010101
 
 # mybatis plus配置
 mybatis-plus:
   configuration:
-    # 在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    # MyBatis 配置：在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
+    # 全局配置
     db-config:
-      id-type: ASSIGN_ID
+      # 数据库配置
+      id-type: auto # id自增
+  type-aliases-package: com.zmm.reggie.entity
+  mapper-locations: classpath*:/mapper/*.xml # 默认是classpath*:/mapper/**/*.xml

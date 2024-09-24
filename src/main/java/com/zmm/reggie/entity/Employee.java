@@ -1,82 +1,68 @@
 package com.zmm.reggie.entity;
 
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 员工信息
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("employee")
+@ApiModel(value="Employee对象", description="员工信息")
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 姓名
-     */
+    @ApiModelProperty(value = "姓名")
     private String name;
 
-    /**
-     * 用户名
-     */
+    @ApiModelProperty(value = "用户名")
     private String username;
 
-    /**
-     * 密码
-     */
+    @ApiModelProperty(value = "密码")
     private String password;
 
-    /**
-     * 手机号
-     */
+    @ApiModelProperty(value = "手机号")
     private String phone;
 
-    /**
-     * 性别
-     */
+    @ApiModelProperty(value = "性别")
     private String sex;
 
-    /**
-     * 身份证号
-     */
+    @ApiModelProperty(value = "身份证号")
     private String idNumber;
 
-    /**
-     * 状态 0:禁用，1:正常
-     */
+    @ApiModelProperty(value = "状态 0:禁用，1:正常")
     private Integer status;
 
-    /**
-     * 创建时间
-     */
+    @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;
 
-    /**
-     * 更新时间
-     */
+    @ApiModelProperty(value = "更新时间")
     private LocalDateTime updateTime;
 
-    /**
-     * 创建人
-     */
+    @ApiModelProperty(value = "创建人")
     private Long createUser;
 
-    /**
-     * 修改人
-     */
+    @ApiModelProperty(value = "修改人")
     private Long updateUser;
 
 

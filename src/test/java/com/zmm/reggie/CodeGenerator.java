@@ -33,6 +33,7 @@ public class CodeGenerator {
                         .service("service")
                         .serviceImpl("service.impl")
                         .xml("mapper.xml")
+                        .controller("controller")
                 )
                 .strategyConfig(builder -> builder
                         .entityBuilder()

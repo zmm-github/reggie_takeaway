@@ -1,75 +1,63 @@
 package com.zmm.reggie.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import java.math.BigDecimal;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 购物车
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 @TableName("shopping_cart")
+@ApiModel(value="ShoppingCart对象", description="购物车")
 public class ShoppingCart implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 名称
-     */
+    @ApiModelProperty(value = "名称")
     private String name;
 
-    /**
-     * 图片
-     */
+    @ApiModelProperty(value = "图片")
     private String image;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
     private Long userId;
 
-    /**
-     * 菜品id
-     */
+    @ApiModelProperty(value = "菜品id")
     private Long dishId;
 
-    /**
-     * 套餐id
-     */
+    @ApiModelProperty(value = "套餐id")
     private Long setmealId;
 
-    /**
-     * 口味
-     */
+    @ApiModelProperty(value = "口味")
     private String dishFlavor;
 
-    /**
-     * 数量
-     */
+    @ApiModelProperty(value = "数量")
     private Integer number;
 
-    /**
-     * 金额
-     */
+    @ApiModelProperty(value = "金额")
     private BigDecimal amount;
 
-    /**
-     * 创建时间
-     */
+    @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;
 
 

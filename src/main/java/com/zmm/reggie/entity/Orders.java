@@ -1,73 +1,63 @@
 package com.zmm.reggie.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 订单表
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("orders")
+@ApiModel(value="Orders对象", description="订单表")
 public class Orders implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 订单号
-     */
+    @ApiModelProperty(value = "订单号")
     private String number;
 
-    /**
-     * 订单状态 1待付款，2待派送，3已派送，4已完成，5已取消
-     */
+    @ApiModelProperty(value = "订单状态 1待付款，2待派送，3已派送，4已完成，5已取消")
     private Integer status;
 
-    /**
-     * 下单用户
-     */
+    @ApiModelProperty(value = "下单用户")
     private Long userId;
 
-    /**
-     * 地址id
-     */
+    @ApiModelProperty(value = "地址id")
     private Long addressBookId;
 
-    /**
-     * 下单时间
-     */
+    @ApiModelProperty(value = "下单时间")
     private LocalDateTime orderTime;
 
-    /**
-     * 结账时间
-     */
+    @ApiModelProperty(value = "结账时间")
     private LocalDateTime checkoutTime;
 
-    /**
-     * 支付方式 1微信,2支付宝
-     */
+    @ApiModelProperty(value = "支付方式 1微信,2支付宝")
     private Integer payMethod;
 
-    /**
-     * 实收金额
-     */
+    @ApiModelProperty(value = "实收金额")
     private BigDecimal amount;
 
-    /**
-     * 备注
-     */
+    @ApiModelProperty(value = "备注")
     private String remark;
 
     private String phone;

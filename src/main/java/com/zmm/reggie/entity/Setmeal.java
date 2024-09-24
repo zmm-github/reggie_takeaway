@@ -1,88 +1,72 @@
 package com.zmm.reggie.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 套餐
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("setmeal")
+@ApiModel(value="Setmeal对象", description="套餐")
 public class Setmeal implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 菜品分类id
-     */
+    @ApiModelProperty(value = "菜品分类id")
     private Long categoryId;
 
-    /**
-     * 套餐名称
-     */
+    @ApiModelProperty(value = "套餐名称")
     private String name;
 
-    /**
-     * 套餐价格
-     */
+    @ApiModelProperty(value = "套餐价格")
     private BigDecimal price;
 
-    /**
-     * 状态 0:停用 1:启用
-     */
+    @ApiModelProperty(value = "状态 0:停用 1:启用")
     private Integer status;
 
-    /**
-     * 编码
-     */
+    @ApiModelProperty(value = "编码")
     private String code;
 
-    /**
-     * 描述信息
-     */
+    @ApiModelProperty(value = "描述信息")
     private String description;
 
-    /**
-     * 图片
-     */
+    @ApiModelProperty(value = "图片")
     private String image;
 
-    /**
-     * 创建时间
-     */
+    @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;
 
-    /**
-     * 更新时间
-     */
+    @ApiModelProperty(value = "更新时间")
     private LocalDateTime updateTime;
 
-    /**
-     * 创建人
-     */
+    @ApiModelProperty(value = "创建人")
     private Long createUser;
 
-    /**
-     * 修改人
-     */
+    @ApiModelProperty(value = "修改人")
     private Long updateUser;
 
-    /**
-     * 是否删除
-     */
+    @ApiModelProperty(value = "是否删除")
     private Integer isDeleted;
 
 

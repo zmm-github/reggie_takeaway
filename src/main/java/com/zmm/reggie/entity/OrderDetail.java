@@ -1,69 +1,59 @@
 package com.zmm.reggie.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 订单明细表
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 @TableName("order_detail")
+@ApiModel(value="OrderDetail对象", description="订单明细表")
 public class OrderDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 名字
-     */
+    @ApiModelProperty(value = "名字")
     private String name;
 
-    /**
-     * 图片
-     */
+    @ApiModelProperty(value = "图片")
     private String image;
 
-    /**
-     * 订单id
-     */
+    @ApiModelProperty(value = "订单id")
     private Long orderId;
 
-    /**
-     * 菜品id
-     */
+    @ApiModelProperty(value = "菜品id")
     private Long dishId;
 
-    /**
-     * 套餐id
-     */
+    @ApiModelProperty(value = "套餐id")
     private Long setmealId;
 
-    /**
-     * 口味
-     */
+    @ApiModelProperty(value = "口味")
     private String dishFlavor;
 
-    /**
-     * 数量
-     */
+    @ApiModelProperty(value = "数量")
     private Integer number;
 
-    /**
-     * 金额
-     */
+    @ApiModelProperty(value = "金额")
     private BigDecimal amount;
 
 

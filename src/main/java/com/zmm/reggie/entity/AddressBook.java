@@ -1,119 +1,89 @@
 package com.zmm.reggie.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 地址管理
  * </p>
  *
- * @author zmm
- * @since 2024-09-23
+ * @author author
+ * @since 2024-09-24
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 @TableName("address_book")
+@ApiModel(value="AddressBook对象", description="地址管理")
 public class AddressBook implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 用户id
-     */
+    @ApiModelProperty(value = "用户id")
     private Long userId;
 
-    /**
-     * 收货人
-     */
+    @ApiModelProperty(value = "收货人")
     private String consignee;
 
-    /**
-     * 性别 0 女 1 男
-     */
+    @ApiModelProperty(value = "性别 0 女 1 男")
     private Integer sex;
 
-    /**
-     * 手机号
-     */
+    @ApiModelProperty(value = "手机号")
     private String phone;
 
-    /**
-     * 省级区划编号
-     */
+    @ApiModelProperty(value = "省级区划编号")
     private String provinceCode;
 
-    /**
-     * 省级名称
-     */
+    @ApiModelProperty(value = "省级名称")
     private String provinceName;
 
-    /**
-     * 市级区划编号
-     */
+    @ApiModelProperty(value = "市级区划编号")
     private String cityCode;
 
-    /**
-     * 市级名称
-     */
+    @ApiModelProperty(value = "市级名称")
     private String cityName;
 
-    /**
-     * 区级区划编号
-     */
+    @ApiModelProperty(value = "区级区划编号")
     private String districtCode;
 
-    /**
-     * 区级名称
-     */
+    @ApiModelProperty(value = "区级名称")
     private String districtName;
 
-    /**
-     * 详细地址
-     */
+    @ApiModelProperty(value = "详细地址")
     private String detail;
 
-    /**
-     * 标签
-     */
+    @ApiModelProperty(value = "标签")
     private String label;
 
-    /**
-     * 默认 0 否 1是
-     */
+    @ApiModelProperty(value = "默认 0 否 1是")
     private Boolean isDefault;
 
-    /**
-     * 创建时间
-     */
+    @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;
 
-    /**
-     * 更新时间
-     */
+    @ApiModelProperty(value = "更新时间")
     private LocalDateTime updateTime;
 
-    /**
-     * 创建人
-     */
+    @ApiModelProperty(value = "创建人")
     private Long createUser;
 
-    /**
-     * 修改人
-     */
+    @ApiModelProperty(value = "修改人")
     private Long updateUser;
 
-    /**
-     * 是否删除
-     */
+    @ApiModelProperty(value = "是否删除")
     private Integer isDeleted;
 
 
