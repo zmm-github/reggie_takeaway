@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 员工信息 服务类
  * </p>
  *
- * @author author
+ * @author zmm
  * @since 2024-09-24
  */
 public interface IEmployeeService extends IService<Employee> {

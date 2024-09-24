@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 套餐菜品关系 前端控制器
  * </p>
  *
- * @author author
+ * @author zmm
  * @since 2024-09-24
  */
 @RestController

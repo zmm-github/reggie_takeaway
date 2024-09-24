@@ -16,7 +16,7 @@ import lombok.experimental.Accessors;
  * 菜品及套餐分类
  * </p>
  *
- * @author author
+ * @author zmm
  * @since 2024-09-24
  */
 @Data

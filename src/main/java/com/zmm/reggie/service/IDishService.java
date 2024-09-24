@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 菜品管理 服务类
  * </p>
  *
- * @author author
+ * @author zmm
  * @since 2024-09-24
  */
 public interface IDishService extends IService<Dish> {
