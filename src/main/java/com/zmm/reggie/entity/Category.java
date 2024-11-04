@@ -1,9 +1,8 @@
 package com.zmm.reggie.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -42,15 +41,19 @@ public class Category implements Serializable {
     private Integer sort;
 
     @ApiModelProperty(value = "创建时间")
+    @TableField(fill = FieldFill.INSERT) // 新增时自动填充
     private LocalDateTime createTime;
 
     @ApiModelProperty(value = "更新时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE) // 新增更新时自动填充
     private LocalDateTime updateTime;
 
     @ApiModelProperty(value = "创建人")
+    @TableField(fill = FieldFill.INSERT) // 新增时自动填充
     private Long createUser;
 
     @ApiModelProperty(value = "修改人")
+    @TableField(fill = FieldFill.INSERT_UPDATE) // 新增更新时自动填充
     private Long updateUser;
 
 
