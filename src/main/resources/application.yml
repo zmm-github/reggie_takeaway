@@ -13,6 +13,9 @@ spring:
     url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: 20010101
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 # mybatis plus配置
 mybatis-plus:
